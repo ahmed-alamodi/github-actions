@@ -1,0 +1,13 @@
+name: test-gitgub-actions
+on: [push]
+jobs:
+  check-bats-virsion:
+    # runs-ubuntu: ubuntu-latest
+
+    # runs-on: self-hosted
+    # runs-on: [self-hosted, linux]
+    runs-on: ubuntu-latest
+
+      steps:
+        - uses:
+        - run:
