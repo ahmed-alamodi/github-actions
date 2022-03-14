@@ -1,7 +1,12 @@
 name: learn-github-actions
-on: [push]
+on: 
+  push:
+    branches:    
+      - 'releases/**'
+    paths:
+      - '**.js'
 jobs:
-  check-bats-version:
+  install-app:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -10,3 +15,7 @@ jobs:
           node-version: "14"
       - run: npm install -g bats
       - run: bats -v
+      - name: install app
+        run: yarn install
+      - name: build app
+        run: yarn build
